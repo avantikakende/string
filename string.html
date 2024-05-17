@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter sentence.." id="input">
+    <button id="btn">Clickbutton</button>
+    <div id="output"></div>
+
+    <script>
+        let input = document.getElementById('input');
+        let output = document.getElementById('output');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click', () => {
+            let inputValue = input.value;
+            let res = capitalize(inputValue);
+            output.innerHTML = `<h2>${res}</h2>`;
+        });
+
+        function capitalize(str) {
+            let s = '';
+            for (let i = 0; i < str.length; i++) {
+                if (i === 0 || str[i - 1] === ' ') {
+                    s += str[i].toUpperCase();
+                } else {
+                    s += str[i];
+                }
+            }
+            return s;
+        }
+
+        let st = 'this is javascript';
+        let res = capitalize(st);
+        console.log(res);
+    </script>
+</body>
+</html>
